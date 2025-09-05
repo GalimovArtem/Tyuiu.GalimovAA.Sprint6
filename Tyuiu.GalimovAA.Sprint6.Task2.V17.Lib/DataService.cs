@@ -1,6 +1,5 @@
 ﻿using System;
 using tyuiu.cources.programming.interfaces.Sprint6;
-using Tyuiu.GalimovAA.Sprint6.Task2.V17.Lib;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task2.V17.Lib
 {
