@@ -16,33 +16,19 @@ namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
                 string fileContent = File.ReadAllText(path);
                 List<double> resultValues = new List<double>();
 
-                string currentNumber = "";
-                bool inNumber = false;
+                string[] numberStrings = fileContent.Split(new[] { ' ', '\t', '\n', '\r', ',', ';' },
+                    StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (char c in fileContent)
+                foreach (string numberStr in numberStrings)
                 {
-                    if (char.IsDigit(c) || c == '-' || c == '.')
+                    if (double.TryParse(numberStr.Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
                     {
-                        currentNumber += c;
-                        inNumber = true;
-                    }
-                    else if (inNumber)
-                    {
-                      
-                        ProcessNumber(currentNumber, resultValues);
-                        currentNumber = "";
-                        inNumber = false;
-                    }
-                }
 
-                if (inNumber)
-                {
-                    ProcessNumber(currentNumber, resultValues);
-                }
-
-                for (int i = 0; i < resultValues.Count; i++)
-                {
-                    resultValues[i] = Math.Round(resultValues[i], 3);
+                        if (number > 0 && (Math.Abs(number % 5) < 0.001))
+                        {
+                            resultValues.Add(Math.Round(number, 3));
+                        }
+                    }
                 }
 
                 return resultValues.ToArray();
@@ -50,21 +36,6 @@ namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
             catch (Exception ex)
             {
                 throw new Exception($"Ошибка при чтении файла: {ex.Message}");
-            }
-        }
-
-        private void ProcessNumber(string numberStr, List<double> resultValues)
-        {
-            if (!string.IsNullOrWhiteSpace(numberStr))
-            {
-                if (double.TryParse(numberStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
-                {
-
-                    if (Math.Abs(number % 5) < 0.001 || Math.Abs(number % 5 - 5) < 0.001)
-                    {
-                        resultValues.Add(number);
-                    }
-                }
             }
         }
     }
