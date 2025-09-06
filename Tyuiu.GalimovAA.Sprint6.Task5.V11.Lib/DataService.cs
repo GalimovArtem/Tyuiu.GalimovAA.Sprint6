@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Globalization;
+using System.Collections.Generic;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
@@ -12,27 +14,57 @@ namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
             try
             {
                 string fileContent = File.ReadAllText(path);
+                List<double> resultValues = new List<double>();
 
-     
-                string[] numberStrings = fileContent.Split(new[] { ' ', '\t', '\n', '\r' },
-                    StringSplitOptions.RemoveEmptyEntries);
+                string currentNumber = "";
+                bool inNumber = false;
 
-                var positiveValues = numberStrings
-                    .Select(str => double.Parse(str.Trim()))
-                    .Where(value => value > 0)
-                    .ToArray();
-
-
-                for (int i = 0; i < positiveValues.Length; i++)
+                foreach (char c in fileContent)
                 {
-                    positiveValues[i] = Math.Round(positiveValues[i], 3);
+                    if (char.IsDigit(c) || c == '-' || c == '.')
+                    {
+                        currentNumber += c;
+                        inNumber = true;
+                    }
+                    else if (inNumber)
+                    {
+                      
+                        ProcessNumber(currentNumber, resultValues);
+                        currentNumber = "";
+                        inNumber = false;
+                    }
                 }
 
-                return positiveValues;
+                if (inNumber)
+                {
+                    ProcessNumber(currentNumber, resultValues);
+                }
+
+                for (int i = 0; i < resultValues.Count; i++)
+                {
+                    resultValues[i] = Math.Round(resultValues[i], 3);
+                }
+
+                return resultValues.ToArray();
             }
             catch (Exception ex)
             {
                 throw new Exception($"Ошибка при чтении файла: {ex.Message}");
+            }
+        }
+
+        private void ProcessNumber(string numberStr, List<double> resultValues)
+        {
+            if (!string.IsNullOrWhiteSpace(numberStr))
+            {
+                if (double.TryParse(numberStr, NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
+                {
+
+                    if (Math.Abs(number % 5) < 0.001 || Math.Abs(number % 5 - 5) < 0.001)
+                    {
+                        resultValues.Add(number);
+                    }
+                }
             }
         }
     }
