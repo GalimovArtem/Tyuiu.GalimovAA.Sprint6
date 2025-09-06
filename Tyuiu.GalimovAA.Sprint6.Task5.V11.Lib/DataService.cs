@@ -1,8 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Globalization;
-using System.Collections.Generic;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
@@ -13,25 +11,16 @@ namespace Tyuiu.GalimovAA.Sprint6.Task5.V11.Lib
         {
             try
             {
-                string fileContent = File.ReadAllText(path);
-                List<double> resultValues = new List<double>();
+                string[] lines = File.ReadAllLines(path);
 
-                string[] numberStrings = fileContent.Split(new[] { ' ', '\t', '\n', '\r', ',', ';' },
-                    StringSplitOptions.RemoveEmptyEntries);
+                var result = lines
+                    .Where(line => !string.IsNullOrWhiteSpace(line))
+                    .Select(line => double.Parse(line.Replace('.', ',')))
+                    .Where(num => num % 5 == 0)
+                    .Select(num => Math.Round(num, 3))
+                    .ToArray();
 
-                foreach (string numberStr in numberStrings)
-                {
-                    if (double.TryParse(numberStr.Trim(), NumberStyles.Any, CultureInfo.InvariantCulture, out double number))
-                    {
-
-                        if (number > 0 && (Math.Abs(number % 5) < 0.001))
-                        {
-                            resultValues.Add(Math.Round(number, 3));
-                        }
-                    }
-                }
-
-                return resultValues.ToArray();
+                return result;
             }
             catch (Exception ex)
             {

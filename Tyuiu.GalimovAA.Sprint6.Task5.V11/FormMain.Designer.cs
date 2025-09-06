@@ -15,130 +15,128 @@
 
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panelTop_GAA = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            this.groupBoxInput_GAA = new System.Windows.Forms.GroupBox();
             this.textBoxPath_GAA = new System.Windows.Forms.TextBox();
             this.buttonOpenFile_GAA = new System.Windows.Forms.Button();
+            this.groupBoxResult_GAA = new System.Windows.Forms.GroupBox();
+            this.dataGridViewNumbers_GAA = new System.Windows.Forms.DataGridView();
+            this.ColumnIndex = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnValue = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chartNumbers_GAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.buttonHelp_GAA = new System.Windows.Forms.Button();
-            this.panelCenter_GAA = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.dataGridViewValues_GAA = new System.Windows.Forms.DataGridView();
-            this.chartDiagram_GAA = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panelTop_GAA.SuspendLayout();
-            this.panelCenter_GAA.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValues_GAA)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDiagram_GAA)).BeginInit();
+            this.groupBoxInput_GAA.SuspendLayout();
+            this.groupBoxResult_GAA.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumbers_GAA)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNumbers_GAA)).BeginInit();
             this.SuspendLayout();
-  
-            this.panelTop_GAA.Controls.Add(this.textBoxPath_GAA);
-            this.panelTop_GAA.Controls.Add(this.buttonOpenFile_GAA);
-            this.panelTop_GAA.Controls.Add(this.buttonHelp_GAA);
-            this.panelTop_GAA.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTop_GAA.Location = new System.Drawing.Point(0, 0);
-            this.panelTop_GAA.Name = "panelTop_GAA";
-            this.panelTop_GAA.Size = new System.Drawing.Size(884, 60);
-            this.panelTop_GAA.TabIndex = 0;
 
-            this.textBoxPath_GAA.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxPath_GAA.Location = new System.Drawing.Point(12, 19);
+            this.groupBoxInput_GAA.Controls.Add(this.textBoxPath_GAA);
+            this.groupBoxInput_GAA.Controls.Add(this.buttonOpenFile_GAA);
+            this.groupBoxInput_GAA.Location = new System.Drawing.Point(12, 12);
+            this.groupBoxInput_GAA.Name = "groupBoxInput_GAA";
+            this.groupBoxInput_GAA.Size = new System.Drawing.Size(560, 60);
+            this.groupBoxInput_GAA.TabIndex = 0;
+            this.groupBoxInput_GAA.TabStop = false;
+            this.groupBoxInput_GAA.Text = "Ввод данных";
+
+            this.textBoxPath_GAA.Location = new System.Drawing.Point(6, 22);
             this.textBoxPath_GAA.Name = "textBoxPath_GAA";
             this.textBoxPath_GAA.ReadOnly = true;
-            this.textBoxPath_GAA.Size = new System.Drawing.Size(650, 20);
-            this.textBoxPath_GAA.TabIndex = 2;
-       
-            this.buttonOpenFile_GAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonOpenFile_GAA.Location = new System.Drawing.Point(668, 17);
+            this.textBoxPath_GAA.Size = new System.Drawing.Size(400, 22);
+            this.textBoxPath_GAA.TabIndex = 1;
+
+            this.buttonOpenFile_GAA.Location = new System.Drawing.Point(412, 19);
             this.buttonOpenFile_GAA.Name = "buttonOpenFile_GAA";
-            this.buttonOpenFile_GAA.Size = new System.Drawing.Size(100, 23);
-            this.buttonOpenFile_GAA.TabIndex = 1;
+            this.buttonOpenFile_GAA.Size = new System.Drawing.Size(142, 27);
+            this.buttonOpenFile_GAA.TabIndex = 0;
             this.buttonOpenFile_GAA.Text = "Открыть файл";
             this.buttonOpenFile_GAA.UseVisualStyleBackColor = true;
             this.buttonOpenFile_GAA.Click += new System.EventHandler(this.buttonOpenFile_GAA_Click);
-  
-            this.buttonHelp_GAA.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonHelp_GAA.Location = new System.Drawing.Point(774, 17);
+
+            this.groupBoxResult_GAA.Controls.Add(this.dataGridViewNumbers_GAA);
+            this.groupBoxResult_GAA.Controls.Add(this.chartNumbers_GAA);
+            this.groupBoxResult_GAA.Location = new System.Drawing.Point(12, 78);
+            this.groupBoxResult_GAA.Name = "groupBoxResult_GAA";
+            this.groupBoxResult_GAA.Size = new System.Drawing.Size(560, 320);
+            this.groupBoxResult_GAA.TabIndex = 1;
+            this.groupBoxResult_GAA.TabStop = false;
+            this.groupBoxResult_GAA.Text = "Результат";
+
+            this.dataGridViewNumbers_GAA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNumbers_GAA.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColumnIndex,
+            this.ColumnValue});
+            this.dataGridViewNumbers_GAA.Location = new System.Drawing.Point(6, 21);
+            this.dataGridViewNumbers_GAA.Name = "dataGridViewNumbers_GAA";
+            this.dataGridViewNumbers_GAA.RowHeadersVisible = false;
+            this.dataGridViewNumbers_GAA.RowHeadersWidth = 51;
+            this.dataGridViewNumbers_GAA.RowTemplate.Height = 24;
+            this.dataGridViewNumbers_GAA.Size = new System.Drawing.Size(200, 293);
+            this.dataGridViewNumbers_GAA.TabIndex = 1;
+
+            this.ColumnIndex.HeaderText = "Индекс";
+            this.ColumnIndex.MinimumWidth = 6;
+            this.ColumnIndex.Name = "ColumnIndex";
+            this.ColumnIndex.Width = 70;
+
+            this.ColumnValue.HeaderText = "Значение";
+            this.ColumnValue.MinimumWidth = 6;
+            this.ColumnValue.Name = "ColumnValue";
+            this.ColumnValue.Width = 125;
+
+            chartArea1.Name = "ChartArea1";
+            this.chartNumbers_GAA.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartNumbers_GAA.Legends.Add(legend1);
+            this.chartNumbers_GAA.Location = new System.Drawing.Point(212, 21);
+            this.chartNumbers_GAA.Name = "chartNumbers_GAA";
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartNumbers_GAA.Series.Add(series1);
+            this.chartNumbers_GAA.Size = new System.Drawing.Size(342, 293);
+            this.chartNumbers_GAA.TabIndex = 0;
+            this.chartNumbers_GAA.Text = "chart1";
+
+            this.buttonHelp_GAA.Location = new System.Drawing.Point(12, 404);
             this.buttonHelp_GAA.Name = "buttonHelp_GAA";
-            this.buttonHelp_GAA.Size = new System.Drawing.Size(100, 23);
-            this.buttonHelp_GAA.TabIndex = 0;
+            this.buttonHelp_GAA.Size = new System.Drawing.Size(100, 30);
+            this.buttonHelp_GAA.TabIndex = 2;
             this.buttonHelp_GAA.Text = "Справка";
             this.buttonHelp_GAA.UseVisualStyleBackColor = true;
             this.buttonHelp_GAA.Click += new System.EventHandler(this.buttonHelp_GAA_Click);
-    
-            this.panelCenter_GAA.Controls.Add(this.splitContainer1);
-            this.panelCenter_GAA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCenter_GAA.Location = new System.Drawing.Point(0, 60);
-            this.panelCenter_GAA.Name = "panelCenter_GAA";
-            this.panelCenter_GAA.Size = new System.Drawing.Size(884, 501);
-            this.panelCenter_GAA.TabIndex = 1;
 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-  
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridViewValues_GAA);
- 
-            this.splitContainer1.Panel2.Controls.Add(this.chartDiagram_GAA);
-            this.splitContainer1.Size = new System.Drawing.Size(884, 501);
-            this.splitContainer1.SplitterDistance = 294;
-            this.splitContainer1.TabIndex = 0;
-
-            this.dataGridViewValues_GAA.AllowUserToAddRows = false;
-            this.dataGridViewValues_GAA.AllowUserToDeleteRows = false;
-            this.dataGridViewValues_GAA.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewValues_GAA.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewValues_GAA.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridViewValues_GAA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridViewValues_GAA.Location = new System.Drawing.Point(0, 0);
-            this.dataGridViewValues_GAA.Name = "dataGridViewValues_GAA";
-            this.dataGridViewValues_GAA.ReadOnly = true;
-            this.dataGridViewValues_GAA.Size = new System.Drawing.Size(294, 501);
-            this.dataGridViewValues_GAA.TabIndex = 0;
- 
-            this.chartDiagram_GAA.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chartDiagram_GAA.Location = new System.Drawing.Point(0, 0);
-            this.chartDiagram_GAA.Name = "chartDiagram_GAA";
-            this.chartDiagram_GAA.Size = new System.Drawing.Size(586, 501);
-            this.chartDiagram_GAA.TabIndex = 0;
-            this.chartDiagram_GAA.Text = "chart1";
-  
-            this.ClientSize = new System.Drawing.Size(884, 561);
-            this.Controls.Add(this.panelCenter_GAA);
-            this.Controls.Add(this.panelTop_GAA);
-            this.MinimumSize = new System.Drawing.Size(900, 600);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(584, 446);
+            this.Controls.Add(this.buttonHelp_GAA);
+            this.Controls.Add(this.groupBoxResult_GAA);
+            this.Controls.Add(this.groupBoxInput_GAA);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Спринт 6 | Таск 5 | Вариант 11 | Галимов А.А.";
-            this.panelTop_GAA.ResumeLayout(false);
-            this.panelTop_GAA.PerformLayout();
-            this.panelCenter_GAA.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewValues_GAA)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartDiagram_GAA)).EndInit();
+            this.Text = "Спринт 6 | Таск 5 | Вариант 11 | Галимов А. А.";
+            this.Load += new System.EventHandler(this.FormMain_Load);
+            this.groupBoxInput_GAA.ResumeLayout(false);
+            this.groupBoxInput_GAA.PerformLayout();
+            this.groupBoxResult_GAA.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNumbers_GAA)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartNumbers_GAA)).EndInit();
             this.ResumeLayout(false);
         }
 
-        private System.Windows.Forms.Panel panelTop_GAA;
-        private System.Windows.Forms.Panel panelCenter_GAA;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dataGridViewValues_GAA;
-        private System.Windows.Forms.DataVisualization.Charting.Chart chartDiagram_GAA;
-        private System.Windows.Forms.Button buttonHelp_GAA;
-        private System.Windows.Forms.Button buttonOpenFile_GAA;
+        private System.Windows.Forms.GroupBox groupBoxInput_GAA;
         private System.Windows.Forms.TextBox textBoxPath_GAA;
+        private System.Windows.Forms.Button buttonOpenFile_GAA;
+        private System.Windows.Forms.GroupBox groupBoxResult_GAA;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartNumbers_GAA;
+        private System.Windows.Forms.DataGridView dataGridViewNumbers_GAA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnIndex;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColumnValue;
+        private System.Windows.Forms.Button buttonHelp_GAA;
     }
 }
