@@ -12,10 +12,13 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
         {
             string path = @"C:\Test\InPutFileTask6V14.txt";
 
-            DataService ds = new DataService();
-            string result = ds.CollectTextFromFile(path);
+            string testData = "Hello world\nThis is test\nzebra amazing\nquick brown fox\nlazy dog";
+            File.WriteAllText(path, testData);
 
-            string wait = "zoo amazing puzzle zombie";
+            DataService ds = new DataService();
+            string result = ds.CollectTextFromFile("z", path);
+
+            string wait = "zebra lazy";
             Assert.AreEqual(wait, result);
         }
     }

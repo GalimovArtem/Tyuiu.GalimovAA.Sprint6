@@ -16,16 +16,17 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
             openFileDialogTask_GAA.ShowDialog();
             string path = openFileDialogTask_GAA.FileName;
 
-            try
+            if (File.Exists(path))
             {
                 textBoxIn_GAA.Text = File.ReadAllText(path);
 
                 DataService ds = new DataService();
-                textBoxOut_GAA.Text = ds.CollectTextFromFile(path);
+                string result = ds.CollectTextFromFile("z", path);
+                textBoxOut_GAA.Text = result;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Ошибка: " + ex.Message, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Файл не выбран!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -33,16 +34,6 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
         {
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
-        }
-
-        private void textBoxIn_GAA_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxOut_GAA_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
