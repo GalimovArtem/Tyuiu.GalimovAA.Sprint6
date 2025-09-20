@@ -1,11 +1,22 @@
-﻿namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib;
+using System.IO;
+
+namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
 {
     [TestClass]
-    public sealed class DataServiceTest
+    public class DataServiceTest
     {
         [TestMethod]
-        public void TestMethod1()
+        public void ValidCollectTextFromFile()
         {
+            string path = @"C:\Test\InPutFileTask6V14.txt";
+
+            DataService ds = new DataService();
+            string result = ds.CollectTextFromFile(path);
+
+            string wait = "zoo amazing puzzle zombie";
+            Assert.AreEqual(wait, result);
         }
     }
 }
