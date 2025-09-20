@@ -35,5 +35,10 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
         }
+
+        private void labelIn_GAA_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
