@@ -67,7 +67,7 @@
             // 
             // openFileDialogTask_GAA
             // 
-            openFileDialogTask_GAA.FileName = "openFileDialog1";
+            openFileDialogTask_GAA.FileName = "InPutFileTask6V14";
             openFileDialogTask_GAA.Filter = "Текстовые файлы|*.txt";
             // 
             // labelIn_GAA
