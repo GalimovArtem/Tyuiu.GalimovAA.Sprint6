@@ -2,6 +2,7 @@
 {
     partial class FormMain
     {
+   
         private System.ComponentModel.IContainer components = null;
 
         protected override void Dispose(bool disposing)
@@ -12,132 +13,163 @@
             }
             base.Dispose(disposing);
         }
-
+    
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
-            textBoxIn = new TextBox();
-            textBoxOut = new TextBox();
-            buttonOpenFile = new Button();
-            buttonExecute = new Button();
-            buttonHelp = new Button();
-            openFileDialogTask = new OpenFileDialog();
-            labelIn = new Label();
-            labelOut = new Label();
-            panelButtons = new Panel();
-            toolTip = new ToolTip(components);
-            panelButtons.SuspendLayout();
-            SuspendLayout();
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
+            this.textBoxIn = new System.Windows.Forms.TextBox();
+            this.textBoxOut = new System.Windows.Forms.TextBox();
+            this.buttonOpenFile = new System.Windows.Forms.Button();
+            this.buttonExecute = new System.Windows.Forms.Button();
+            this.buttonHelp = new System.Windows.Forms.Button();
+            this.openFileDialogTask = new System.Windows.Forms.OpenFileDialog();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.pictureBoxOpen = new System.Windows.Forms.PictureBox();
+            this.pictureBoxExecute = new System.Windows.Forms.PictureBox();
+            this.pictureBoxHelp = new System.Windows.Forms.PictureBox();
+            this.labelInput = new System.Windows.Forms.Label();
+            this.labelOutput = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpen)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExecute)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).BeginInit();
+            this.SuspendLayout();
             // 
             // textBoxIn
             // 
-            textBoxIn.Location = new Point(13, 118);
-            textBoxIn.Margin = new Padding(4, 3, 4, 3);
-            textBoxIn.Multiline = true;
-            textBoxIn.Name = "textBoxIn";
-            textBoxIn.ScrollBars = ScrollBars.Vertical;
-            textBoxIn.Size = new Size(251, 230);
-            textBoxIn.TabIndex = 0;
+            this.textBoxIn.Location = new System.Drawing.Point(12, 35);
+            this.textBoxIn.Multiline = true;
+            this.textBoxIn.Name = "textBoxIn";
+            this.textBoxIn.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxIn.Size = new System.Drawing.Size(400, 200);
+            this.textBoxIn.TabIndex = 0;
             // 
             // textBoxOut
             // 
-            textBoxOut.Location = new Point(306, 118);
-            textBoxOut.Margin = new Padding(4, 3, 4, 3);
-            textBoxOut.Multiline = true;
-            textBoxOut.Name = "textBoxOut";
-            textBoxOut.ReadOnly = true;
-            textBoxOut.ScrollBars = ScrollBars.Vertical;
-            textBoxOut.Size = new Size(251, 230);
-            textBoxOut.TabIndex = 1;
+            this.textBoxOut.Location = new System.Drawing.Point(12, 270);
+            this.textBoxOut.Multiline = true;
+            this.textBoxOut.Name = "textBoxOut";
+            this.textBoxOut.ReadOnly = true;
+            this.textBoxOut.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.textBoxOut.Size = new System.Drawing.Size(400, 200);
+            this.textBoxOut.TabIndex = 1;
             // 
             // buttonOpenFile
             // 
-            buttonOpenFile.Location = new Point(4, 3);
-            buttonOpenFile.Margin = new Padding(4, 3, 4, 3);
-            buttonOpenFile.Name = "buttonOpenFile";
-            buttonOpenFile.Size = new Size(47, 46);
-            buttonOpenFile.TabIndex = 2;
-            buttonOpenFile.UseVisualStyleBackColor = true;
-            buttonOpenFile.Click += buttonOpenFile_Click;
+            this.buttonOpenFile.Location = new System.Drawing.Point(430, 35);
+            this.buttonOpenFile.Name = "buttonOpenFile";
+            this.buttonOpenFile.Size = new System.Drawing.Size(100, 30);
+            this.buttonOpenFile.TabIndex = 2;
+            this.buttonOpenFile.Text = "Открыть файл";
+            this.buttonOpenFile.UseVisualStyleBackColor = true;
+            this.buttonOpenFile.Click += new System.EventHandler(this.buttonOpenFile_Click);
             // 
             // buttonExecute
             // 
-            buttonExecute.Enabled = false;
-            buttonExecute.Location = new Point(57, 3);
-            buttonExecute.Margin = new Padding(4, 3, 4, 3);
-            buttonExecute.Name = "buttonExecute";
-            buttonExecute.Size = new Size(47, 46);
-            buttonExecute.TabIndex = 3;
-            buttonExecute.UseVisualStyleBackColor = true;
-            buttonExecute.Click += buttonExecute_Click;
+            this.buttonExecute.Enabled = false;
+            this.buttonExecute.Location = new System.Drawing.Point(430, 85);
+            this.buttonExecute.Name = "buttonExecute";
+            this.buttonExecute.Size = new System.Drawing.Size(100, 30);
+            this.buttonExecute.TabIndex = 3;
+            this.buttonExecute.Text = "Выполнить";
+            this.buttonExecute.UseVisualStyleBackColor = true;
+            this.buttonExecute.Click += new System.EventHandler(this.buttonExecute_Click);
             // 
             // buttonHelp
             // 
-            buttonHelp.Location = new Point(493, 3);
-            buttonHelp.Margin = new Padding(4, 3, 4, 3);
-            buttonHelp.Name = "buttonHelp";
-            buttonHelp.Size = new Size(47, 46);
-            buttonHelp.TabIndex = 4;
-            buttonHelp.UseVisualStyleBackColor = true;
-            buttonHelp.Click += buttonHelp_Click;
+            this.buttonHelp.Location = new System.Drawing.Point(430, 135);
+            this.buttonHelp.Name = "buttonHelp";
+            this.buttonHelp.Size = new System.Drawing.Size(100, 30);
+            this.buttonHelp.TabIndex = 4;
+            this.buttonHelp.Text = "Справка";
+            this.buttonHelp.UseVisualStyleBackColor = true;
+            this.buttonHelp.Click += new System.EventHandler(this.buttonHelp_Click);
             // 
             // openFileDialogTask
             // 
-            openFileDialogTask.FileName = "openFileDialogTask";
-            openFileDialogTask.Filter = "Текстовые файлы|*.txt|Все файлы|*.*";
+            this.openFileDialogTask.FileName = "openFileDialogTask";
+            this.openFileDialogTask.Filter = "Текстовые файлы|*.txt|Все файлы|*.*";
             // 
-            // labelIn
+            // pictureBoxOpen
             // 
-            labelIn.AutoSize = true;
-            labelIn.Location = new Point(17, 87);
-            labelIn.Margin = new Padding(4, 0, 4, 0);
-            labelIn.Name = "labelIn";
-            labelIn.Size = new Size(36, 15);
-            labelIn.TabIndex = 5;
-            labelIn.Text = "Ввод:";
+            this.pictureBoxOpen.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxOpen.Image")));
+            this.pictureBoxOpen.Location = new System.Drawing.Point(540, 35);
+            this.pictureBoxOpen.Name = "pictureBoxOpen";
+            this.pictureBoxOpen.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxOpen.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxOpen.TabIndex = 5;
+            this.pictureBoxOpen.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBoxOpen, "Открыть файл");
             // 
-            // labelOut
+            // pictureBoxExecute
             // 
-            labelOut.AutoSize = true;
-            labelOut.Location = new Point(306, 87);
-            labelOut.Margin = new Padding(4, 0, 4, 0);
-            labelOut.Name = "labelOut";
-            labelOut.Size = new Size(45, 15);
-            labelOut.TabIndex = 6;
-            labelOut.Text = "Вывод:";
+            this.pictureBoxExecute.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxExecute.Image")));
+            this.pictureBoxExecute.Location = new System.Drawing.Point(540, 85);
+            this.pictureBoxExecute.Name = "pictureBoxExecute";
+            this.pictureBoxExecute.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxExecute.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxExecute.TabIndex = 6;
+            this.pictureBoxExecute.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBoxExecute, "Выполнить задание");
             // 
-            // panelButtons
+            // pictureBoxHelp
             // 
-            panelButtons.Controls.Add(buttonOpenFile);
-            panelButtons.Controls.Add(buttonExecute);
-            panelButtons.Controls.Add(buttonHelp);
-            panelButtons.Location = new Point(13, 12);
-            panelButtons.Margin = new Padding(4, 3, 4, 3);
-            panelButtons.Name = "panelButtons";
-            panelButtons.Size = new Size(544, 53);
-            panelButtons.TabIndex = 7;
-            panelButtons.Paint += panelButtons_Paint;
+            this.pictureBoxHelp.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxHelp.Image")));
+            this.pictureBoxHelp.Location = new System.Drawing.Point(540, 135);
+            this.pictureBoxHelp.Name = "pictureBoxHelp";
+            this.pictureBoxHelp.Size = new System.Drawing.Size(24, 24);
+            this.pictureBoxHelp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBoxHelp.TabIndex = 7;
+            this.pictureBoxHelp.TabStop = false;
+            this.toolTip.SetToolTip(this.pictureBoxHelp, "О программе");
+            // 
+            // labelInput
+            // 
+            this.labelInput.AutoSize = true;
+            this.labelInput.Location = new System.Drawing.Point(12, 15);
+            this.labelInput.Name = "labelInput";
+            this.labelInput.Size = new System.Drawing.Size(80, 13);
+            this.labelInput.TabIndex = 8;
+            this.labelInput.Text = "Входные данные:";
+            // 
+            // labelOutput
+            // 
+            this.labelOutput.AutoSize = true;
+            this.labelOutput.Location = new System.Drawing.Point(12, 250);
+            this.labelOutput.Name = "labelOutput";
+            this.labelOutput.Size = new System.Drawing.Size(139, 13);
+            this.labelOutput.TabIndex = 9;
+            this.labelOutput.Text = "Слова содержащие 'z':";
             // 
             // FormMain
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(571, 367);
-            Controls.Add(panelButtons);
-            Controls.Add(labelOut);
-            Controls.Add(labelIn);
-            Controls.Add(textBoxOut);
-            Controls.Add(textBoxIn);
-            FormBorderStyle = FormBorderStyle.FixedSingle;
-            Margin = new Padding(4, 3, 4, 3);
-            MaximizeBox = false;
-            Name = "FormMain";
-            StartPosition = FormStartPosition.CenterScreen;
-            Text = "Спринт 6 | Таск 6 | Вариант 14 | Галимов А. А.";
-            panelButtons.ResumeLayout(false);
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(584, 481);
+            this.Controls.Add(this.labelOutput);
+            this.Controls.Add(this.labelInput);
+            this.Controls.Add(this.pictureBoxHelp);
+            this.Controls.Add(this.pictureBoxExecute);
+            this.Controls.Add(this.pictureBoxOpen);
+            this.Controls.Add(this.buttonHelp);
+            this.Controls.Add(this.buttonExecute);
+            this.Controls.Add(this.buttonOpenFile);
+            this.Controls.Add(this.textBoxOut);
+            this.Controls.Add(this.textBoxIn);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.Name = "FormMain";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Спринт 6 | Таск 6 | Вариант 14 | Галимов А.А.";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxOpen)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxExecute)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxHelp)).EndInit();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
+
+     
 
         private System.Windows.Forms.TextBox textBoxIn;
         private System.Windows.Forms.TextBox textBoxOut;
@@ -145,9 +177,11 @@
         private System.Windows.Forms.Button buttonExecute;
         private System.Windows.Forms.Button buttonHelp;
         private System.Windows.Forms.OpenFileDialog openFileDialogTask;
-        private System.Windows.Forms.Label labelIn;
-        private System.Windows.Forms.Label labelOut;
-        private System.Windows.Forms.Panel panelButtons;
         private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.PictureBox pictureBoxOpen;
+        private System.Windows.Forms.PictureBox pictureBoxExecute;
+        private System.Windows.Forms.PictureBox pictureBoxHelp;
+        private System.Windows.Forms.Label labelInput;
+        private System.Windows.Forms.Label labelOutput;
     }
 }

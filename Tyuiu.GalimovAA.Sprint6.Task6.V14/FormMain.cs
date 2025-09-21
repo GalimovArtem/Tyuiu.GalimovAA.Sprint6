@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 using System.Windows.Forms;
 using Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib;
 
@@ -14,33 +15,33 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
         private void buttonOpenFile_Click(object sender, EventArgs e)
         {
             openFileDialogTask.ShowDialog();
-            string selectedFile = openFileDialogTask.FileName;
+            string filename = openFileDialogTask.FileName;
 
-            try
+            if (File.Exists(filename))
             {
-                textBoxIn.Text = System.IO.File.ReadAllText(selectedFile);
+                textBoxIn.Text = File.ReadAllText(filename);
                 buttonExecute.Enabled = true;
             }
-            catch
+            else
             {
-                MessageBox.Show("Не удалось открыть файл", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Файл не выбран или не существует!", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
         private void buttonExecute_Click(object sender, EventArgs e)
         {
             DataService ds = new DataService();
-            string path = openFileDialogTask.FileName;
-
             try
             {
-                textBoxOut.Text = ds.CollectTextFromFile("", path);
+                string path = openFileDialogTask.FileName;
+                string result = ds.CollectTextFromFile(path);
+                textBoxOut.Text = result;
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Ошибка при выполнении задания", "Ошибка",
-                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show($"Ошибка: {ex.Message}", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -48,11 +49,6 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
         {
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
-        }
-
-        private void panelButtons_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

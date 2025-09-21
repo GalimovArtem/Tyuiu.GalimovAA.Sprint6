@@ -1,51 +1,26 @@
 ﻿using System;
-using System.Linq;
 using System.IO;
-using System.Text;
+using System.Linq;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib
 {
     public class DataService : ISprint6Task6V14
     {
-        public string CollectTextFromFile(string str, string path)
+        public string CollectTextFromFile(string path)
         {
-            StringBuilder result = new StringBuilder();
+            string content = File.ReadAllText(path);
 
-            if (!File.Exists(path))
-            {
-                return "Файл не существует";
-            }
+            // Разделяем текст на слова, используя различные разделители
+            char[] separators = new char[] { ' ', '\r', '\n', '\t', '.', ',', '!', '?', ';', ':', '(', ')', '[', ']', '{', '}', '"', '\'' };
 
-            try
-            {
-                string[] lines = File.ReadAllLines(path);
-                char[] separators = new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t', '\n', '\r' };
+            string[] words = content.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
-                foreach (string line in lines)
-                {
-                    string[] words = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
+            // Фильтруем слова, содержащие букву 'z' (регистронезависимо)
+            var wordsWithZ = words.Where(word => word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0);
 
-                    foreach (string word in words)
-                    {
-                        if (word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0)
-                        {
-                            result.Append(word).Append(" ");
-                        }
-                    }
-                }
-
-                if (result.Length > 0)
-                {
-                    result.Length--; // Убираем последний пробел
-                }
-
-                return result.ToString();
-            }
-            catch (Exception ex)
-            {
-                return $"Ошибка при чтении файла: {ex.Message}";
-            }
+            // Объединяем слова через пробел
+            return string.Join(" ", wordsWithZ);
         }
     }
 }

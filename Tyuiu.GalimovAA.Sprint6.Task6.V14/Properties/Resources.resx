@@ -121,13 +121,13 @@
   <data name="buttonHelp" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon (1).ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="favicon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="pictureBoxDeveloper" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon.ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="favicon (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonOpenFile" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon (2).ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="favicon (4)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="buttonExecute" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\favicon (4).ico;System.Byte[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

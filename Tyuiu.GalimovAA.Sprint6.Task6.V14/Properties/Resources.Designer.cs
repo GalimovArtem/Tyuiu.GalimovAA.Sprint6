@@ -63,6 +63,16 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
+        public static byte[] buttonExecute {
+            get {
+                object obj = ResourceManager.GetObject("buttonExecute", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Byte[].
+        /// </summary>
         public static byte[] buttonHelp {
             get {
                 object obj = ResourceManager.GetObject("buttonHelp", resourceCulture);
@@ -73,9 +83,9 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] favicon {
+        public static byte[] buttonOpenFile {
             get {
-                object obj = ResourceManager.GetObject("favicon", resourceCulture);
+                object obj = ResourceManager.GetObject("buttonOpenFile", resourceCulture);
                 return ((byte[])(obj));
             }
         }
@@ -83,19 +93,9 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static byte[] favicon__2_ {
+        public static byte[] pictureBoxDeveloper {
             get {
-                object obj = ResourceManager.GetObject("favicon (2)", resourceCulture);
-                return ((byte[])(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Byte[].
-        /// </summary>
-        public static byte[] favicon__4_ {
-            get {
-                object obj = ResourceManager.GetObject("favicon (4)", resourceCulture);
+                object obj = ResourceManager.GetObject("pictureBoxDeveloper", resourceCulture);
                 return ((byte[])(obj));
             }
         }

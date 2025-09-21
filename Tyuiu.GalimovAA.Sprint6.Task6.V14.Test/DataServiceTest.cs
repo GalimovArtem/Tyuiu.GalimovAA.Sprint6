@@ -12,39 +12,44 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
         {
             string path = @"C:\Test\InPutFileTask6V14.txt";
 
-            string testContent = "Hello world\nThis is a test\nzebra amazing\nquick brown fox\nlazy dog";
-            File.WriteAllText(path, testContent);
+            File.WriteAllText(path, "Hello world\nThis is a test with zoo and amazing words\nFinal zzz line");
 
             DataService ds = new DataService();
-            string result = ds.CollectTextFromFile("", path);
-            string wait = "zebra lazy";
+            string result = ds.CollectTextFromFile(path);
 
-            Assert.AreEqual(wait, result);
+            string expected = "zoo amazing zzz";
+            Assert.AreEqual(expected, result);
 
             File.Delete(path);
         }
 
         [TestMethod]
-        public void FileNotExistsTest()
+        public void ValidCollectTextFromFileNoZ()
         {
-            DataService ds = new DataService();
-            string result = ds.CollectTextFromFile("", @"C:\NonexistentFile.txt");
-            string wait = "Файл не существует";
+            string path = @"C:\Test\InPutFileTask6V14_NoZ.txt";
 
-            Assert.AreEqual(wait, result);
+            File.WriteAllText(path, "Hello world\nThis is a test without special letters\nFinal line");
+
+            DataService ds = new DataService();
+            string result = ds.CollectTextFromFile(path);
+
+            Assert.AreEqual("", result);
+
+            File.Delete(path);
         }
 
         [TestMethod]
-        public void NoZWordsTest()
+        public void ValidCollectTextFromFileMixedCase()
         {
-            string path = @"C:\Test\NoZFile.txt";
-            File.WriteAllText(path, "Hello world\nThis is a test\nquick brown fox");
+            string path = @"C:\Test\InPutFileTask6V14_Mixed.txt";
+
+            File.WriteAllText(path, "Zoo amazing ZEBRA fizz Buzz");
 
             DataService ds = new DataService();
-            string result = ds.CollectTextFromFile("", path);
-            string wait = "";
+            string result = ds.CollectTextFromFile(path);
 
-            Assert.AreEqual(wait, result);
+            string expected = "Zoo amazing ZEBRA fizz Buzz";
+            Assert.AreEqual(expected, result);
 
             File.Delete(path);
         }
