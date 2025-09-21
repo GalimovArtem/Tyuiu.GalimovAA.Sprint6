@@ -1,54 +1,57 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Text;
 using tyuiu.cources.programming.interfaces.Sprint6;
-using Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib
 {
     public class DataService : ISprint6Task6V14
     {
-        public string CollectTextFromFile(string path)
+        public string CollectTextFromFile(string str, string path)
         {
-            string result = "";
+            StringBuilder result = new StringBuilder();
 
             try
             {
-                if (File.Exists(path))
+                if (!File.Exists(path))
+                    return "Файл не существует";
+
+                string[] lines = File.ReadAllLines(path);
+                char[] separators = GetWordSeparators();
+
+                foreach (string line in lines)
                 {
-                    string[] lines = File.ReadAllLines(path);
+                    string[] words = line.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
-                    foreach (string line in lines)
+                    foreach (string word in words)
                     {
-                        string[] words = line.Split(new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t' },
-                                                  StringSplitOptions.RemoveEmptyEntries);
-
-                        foreach (string word in words)
+                        if (ContainsZ(word))
                         {
-                            if (word.Contains('z') || word.Contains('Z'))
-                            {
-                                result += word + " ";
-                            }
+                            result.Append(word).Append(" ");
                         }
                     }
+                }
 
-                    // Убираем последний пробел
-                    if (result.Length > 0)
-                    {
-                        result = result.Trim();
-                    }
-                }
-                else
-                {
-                    result = "Файл не существует";
-                }
+                return result.Length > 0 ? result.ToString().Trim() : "Слова с буквой 'z' не найдены";
             }
             catch (Exception ex)
             {
-                result = $"Ошибка: {ex.Message}";
+                return $"Ошибка: {ex.Message}";
             }
+        }
 
-            return result;
+        private char[] GetWordSeparators()
+        {
+            return new char[] {
+                ' ', ',', '.', '!', '?', ';', ':', '\t', '\n', '\r',
+                '-', '_', '(', ')', '[', ']', '{', '}', '"', '\''
+            };
+        }
+
+        private bool ContainsZ(string word)
+        {
+            return word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0;
         }
     }
 }
