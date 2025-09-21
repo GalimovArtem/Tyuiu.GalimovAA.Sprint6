@@ -1,6 +1,6 @@
 ﻿using System;
-using System.IO;
 using System.Linq;
+using System.IO;
 using System.Text;
 using tyuiu.cources.programming.interfaces.Sprint6;
 
@@ -12,13 +12,15 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib
         {
             StringBuilder result = new StringBuilder();
 
+            if (!File.Exists(path))
+            {
+                return "Файл не существует";
+            }
+
             try
             {
-                if (!File.Exists(path))
-                    return "Файл не существует";
-
                 string[] lines = File.ReadAllLines(path);
-                char[] separators = GetWordSeparators();
+                char[] separators = new char[] { ' ', ',', '.', '!', '?', ';', ':', '\t', '\n', '\r' };
 
                 foreach (string line in lines)
                 {
@@ -26,32 +28,24 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib
 
                     foreach (string word in words)
                     {
-                        if (ContainsZ(word))
+                        if (word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0)
                         {
                             result.Append(word).Append(" ");
                         }
                     }
                 }
 
-                return result.Length > 0 ? result.ToString().Trim() : "Слова с буквой 'z' не найдены";
+                if (result.Length > 0)
+                {
+                    result.Length--; // Убираем последний пробел
+                }
+
+                return result.ToString();
             }
             catch (Exception ex)
             {
-                return $"Ошибка: {ex.Message}";
+                return $"Ошибка при чтении файла: {ex.Message}";
             }
-        }
-
-        private char[] GetWordSeparators()
-        {
-            return new char[] {
-                ' ', ',', '.', '!', '?', ';', ':', '\t', '\n', '\r',
-                '-', '_', '(', ')', '[', ']', '{', '}', '"', '\''
-            };
-        }
-
-        private bool ContainsZ(string word)
-        {
-            return word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0;
         }
     }
 }

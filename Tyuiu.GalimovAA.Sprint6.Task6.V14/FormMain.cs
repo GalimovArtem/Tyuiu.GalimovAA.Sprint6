@@ -11,29 +11,48 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
             InitializeComponent();
         }
 
-        private void buttonOpenFile_GAA_Click(object sender, EventArgs e)
+        private void buttonOpenFile_Click(object sender, EventArgs e)
         {
-            openFileDialogTask_GAA.ShowDialog();
-            string path = openFileDialogTask_GAA.FileName;
+            openFileDialogTask.ShowDialog();
+            string selectedFile = openFileDialogTask.FileName;
 
-            if (File.Exists(path))
+            try
             {
-                textBoxIn_GAA.Text = File.ReadAllText(path);
-
-                DataService ds = new DataService();
-                textBoxOut_GAA.Text = ds.CollectTextFromFile(path);
+                textBoxIn.Text = System.IO.File.ReadAllText(selectedFile);
+                buttonExecute.Enabled = true;
             }
-            else
+            catch
             {
-                MessageBox.Show("Файл не выбран или не существует", "Ошибка",
-                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Не удалось открыть файл", "Ошибка",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        private void buttonHelp_GAA_Click(object sender, EventArgs e)
+        private void buttonExecute_Click(object sender, EventArgs e)
+        {
+            DataService ds = new DataService();
+            string path = openFileDialogTask.FileName;
+
+            try
+            {
+                textBoxOut.Text = ds.CollectTextFromFile("", path);
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при выполнении задания", "Ошибка",
+                              MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonHelp_Click(object sender, EventArgs e)
         {
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
+        }
+
+        private void panelButtons_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }
