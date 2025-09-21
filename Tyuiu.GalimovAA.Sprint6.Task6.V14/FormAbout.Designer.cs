@@ -14,120 +14,126 @@
             base.Dispose(disposing);
         }
 
-    
+
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            this.pictureBoxDeveloper = new System.Windows.Forms.PictureBox();
-            this.labelDeveloper = new System.Windows.Forms.Label();
-            this.labelGroup = new System.Windows.Forms.Label();
-            this.labelUniversity = new System.Windows.Forms.Label();
-            this.labelSchool = new System.Windows.Forms.Label();
-            this.labelCopyright = new System.Windows.Forms.Label();
-            this.labelInternalName = new System.Windows.Forms.Label();
-            this.buttonOk = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeveloper)).BeginInit();
-            this.SuspendLayout();
+            pictureBoxDeveloper = new PictureBox();
+            labelDeveloper = new Label();
+            labelGroup = new Label();
+            labelUniversity = new Label();
+            labelSchool = new Label();
+            labelCopyright = new Label();
+            labelInternalName = new Label();
+            buttonOk = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDeveloper).BeginInit();
+            SuspendLayout();
             // 
             // pictureBoxDeveloper
             // 
-            this.pictureBoxDeveloper.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDeveloper.Image")));
-            this.pictureBoxDeveloper.Location = new System.Drawing.Point(20, 20);
-            this.pictureBoxDeveloper.Name = "pictureBoxDeveloper";
-            this.pictureBoxDeveloper.Size = new System.Drawing.Size(100, 100);
-            this.pictureBoxDeveloper.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBoxDeveloper.TabIndex = 0;
-            this.pictureBoxDeveloper.TabStop = false;
+            pictureBoxDeveloper.Location = new Point(4, 23);
+            pictureBoxDeveloper.Margin = new Padding(4, 3, 4, 3);
+            pictureBoxDeveloper.Name = "pictureBoxDeveloper";
+            pictureBoxDeveloper.Size = new Size(151, 229);
+            pictureBoxDeveloper.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDeveloper.TabIndex = 0;
+            pictureBoxDeveloper.TabStop = false;
             // 
             // labelDeveloper
             // 
-            this.labelDeveloper.AutoSize = true;
-            this.labelDeveloper.Location = new System.Drawing.Point(140, 20);
-            this.labelDeveloper.Name = "labelDeveloper";
-            this.labelDeveloper.Size = new System.Drawing.Size(135, 13);
-            this.labelDeveloper.TabIndex = 1;
-            this.labelDeveloper.Text = "Разработчик: Галимов А.А.";
+            labelDeveloper.AutoSize = true;
+            labelDeveloper.Location = new Point(163, 23);
+            labelDeveloper.Margin = new Padding(4, 0, 4, 0);
+            labelDeveloper.Name = "labelDeveloper";
+            labelDeveloper.Size = new Size(156, 15);
+            labelDeveloper.TabIndex = 1;
+            labelDeveloper.Text = "Разработчик: Галимов А.А.";
             // 
             // labelGroup
             // 
-            this.labelGroup.AutoSize = true;
-            this.labelGroup.Location = new System.Drawing.Point(140, 45);
-            this.labelGroup.Name = "labelGroup";
-            this.labelGroup.Size = new System.Drawing.Size(95, 13);
-            this.labelGroup.TabIndex = 2;
-            this.labelGroup.Text = "Группа: ПКТб-24-1";
+            labelGroup.AutoSize = true;
+            labelGroup.Location = new Point(163, 52);
+            labelGroup.Margin = new Padding(4, 0, 4, 0);
+            labelGroup.Name = "labelGroup";
+            labelGroup.Size = new Size(109, 15);
+            labelGroup.TabIndex = 2;
+            labelGroup.Text = "Группа: ПКТб-24-1";
             // 
             // labelUniversity
             // 
-            this.labelUniversity.AutoSize = true;
-            this.labelUniversity.Location = new System.Drawing.Point(20, 140);
-            this.labelUniversity.Name = "labelUniversity";
-            this.labelUniversity.Size = new System.Drawing.Size(253, 13);
-            this.labelUniversity.TabIndex = 3;
-            this.labelUniversity.Text = "Тюменский индустриальный университет (с) 2023";
+            labelUniversity.AutoSize = true;
+            labelUniversity.Location = new Point(163, 109);
+            labelUniversity.Margin = new Padding(4, 0, 4, 0);
+            labelUniversity.Name = "labelUniversity";
+            labelUniversity.Size = new Size(265, 15);
+            labelUniversity.TabIndex = 3;
+            labelUniversity.Text = "Тюменский индустриальный университет 2024";
             // 
             // labelSchool
             // 
-            this.labelSchool.AutoSize = true;
-            this.labelSchool.Location = new System.Drawing.Point(20, 165);
-            this.labelSchool.Name = "labelSchool";
-            this.labelSchool.Size = new System.Drawing.Size(246, 13);
-            this.labelSchool.TabIndex = 4;
-            this.labelSchool.Text = "Высшая школа цифровых технологий (с) 2023";
+            labelSchool.AutoSize = true;
+            labelSchool.Location = new Point(163, 135);
+            labelSchool.Margin = new Padding(4, 0, 4, 0);
+            labelSchool.Name = "labelSchool";
+            labelSchool.Size = new Size(247, 15);
+            labelSchool.TabIndex = 4;
+            labelSchool.Text = "Высшая школа цифровых технологий 2024";
             // 
             // labelCopyright
             // 
-            this.labelCopyright.AutoSize = true;
-            this.labelCopyright.Location = new System.Drawing.Point(140, 70);
-            this.labelCopyright.Name = "labelCopyright";
-            this.labelCopyright.Size = new System.Drawing.Size(190, 13);
-            this.labelCopyright.TabIndex = 5;
-            this.labelCopyright.Text = "Программа разработана на языке C#";
+            labelCopyright.AutoSize = true;
+            labelCopyright.Location = new Point(163, 81);
+            labelCopyright.Margin = new Padding(4, 0, 4, 0);
+            labelCopyright.Name = "labelCopyright";
+            labelCopyright.Size = new Size(213, 15);
+            labelCopyright.TabIndex = 5;
+            labelCopyright.Text = "Программа разработана на языке C#";
             // 
             // labelInternalName
             // 
-            this.labelInternalName.AutoSize = true;
-            this.labelInternalName.Location = new System.Drawing.Point(20, 190);
-            this.labelInternalName.Name = "labelInternalName";
-            this.labelInternalName.Size = new System.Drawing.Size(242, 13);
-            this.labelInternalName.TabIndex = 6;
-            this.labelInternalName.Text = "Внутреннее имя: GalimovAA_Task6_V14.V0";
+            labelInternalName.AutoSize = true;
+            labelInternalName.Location = new Point(163, 165);
+            labelInternalName.Margin = new Padding(4, 0, 4, 0);
+            labelInternalName.Name = "labelInternalName";
+            labelInternalName.Size = new Size(286, 15);
+            labelInternalName.TabIndex = 6;
+            labelInternalName.Text = "Внутреннее имя: Tyuiu.GalimovAA.Sprint6.Task6.V14";
             // 
             // buttonOk
             // 
-            this.buttonOk.Location = new System.Drawing.Point(120, 220);
-            this.buttonOk.Name = "buttonOk";
-            this.buttonOk.Size = new System.Drawing.Size(75, 30);
-            this.buttonOk.TabIndex = 7;
-            this.buttonOk.Text = "OK";
-            this.buttonOk.UseVisualStyleBackColor = true;
-            this.buttonOk.Click += new System.EventHandler(this.buttonOk_Click);
+            buttonOk.Location = new Point(360, 217);
+            buttonOk.Margin = new Padding(4, 3, 4, 3);
+            buttonOk.Name = "buttonOk";
+            buttonOk.Size = new Size(88, 35);
+            buttonOk.TabIndex = 7;
+            buttonOk.Text = "OK";
+            buttonOk.UseVisualStyleBackColor = true;
+            buttonOk.Click += buttonOk_Click;
             // 
             // FormAbout
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(334, 261);
-            this.Controls.Add(this.buttonOk);
-            this.Controls.Add(this.labelInternalName);
-            this.Controls.Add(this.labelCopyright);
-            this.Controls.Add(this.labelSchool);
-            this.Controls.Add(this.labelUniversity);
-            this.Controls.Add(this.labelGroup);
-            this.Controls.Add(this.labelDeveloper);
-            this.Controls.Add(this.pictureBoxDeveloper);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormAbout";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "О программе";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDeveloper)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(461, 264);
+            Controls.Add(buttonOk);
+            Controls.Add(labelInternalName);
+            Controls.Add(labelCopyright);
+            Controls.Add(labelSchool);
+            Controls.Add(labelUniversity);
+            Controls.Add(labelGroup);
+            Controls.Add(labelDeveloper);
+            Controls.Add(pictureBoxDeveloper);
+            Margin = new Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormAbout";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "О программе";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDeveloper).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
-       
+
 
         private System.Windows.Forms.PictureBox pictureBoxDeveloper;
         private System.Windows.Forms.Label labelDeveloper;
