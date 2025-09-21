@@ -16,8 +16,8 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib
 
             string[] words = content.Split(separators, StringSplitOptions.RemoveEmptyEntries);
 
-            // Фильтруем слова, содержащие букву 'z' (регистронезависимо)
-            var wordsWithZ = words.Where(word => word.IndexOf('z', StringComparison.OrdinalIgnoreCase) >= 0);
+            // Фильтруем слова, содержащие только строчную букву 'z'
+            var wordsWithZ = words.Where(word => word.IndexOf('z') >= 0);
 
             // Объединяем слова через пробел
             return string.Join(" ", wordsWithZ);
