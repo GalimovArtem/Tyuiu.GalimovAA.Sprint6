@@ -21,12 +21,12 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
                 textBoxIn_GAA.Text = File.ReadAllText(path);
 
                 DataService ds = new DataService();
-                string result = ds.CollectTextFromFile("z", path);
-                textBoxOut_GAA.Text = result;
+                textBoxOut_GAA.Text = ds.CollectTextFromFile(path);
             }
             else
             {
-                MessageBox.Show("Файл не выбран!", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Файл не выбран или не существует", "Ошибка",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -34,11 +34,6 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14
         {
             FormAbout formAbout = new FormAbout();
             formAbout.ShowDialog();
-        }
-
-        private void labelIn_GAA_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

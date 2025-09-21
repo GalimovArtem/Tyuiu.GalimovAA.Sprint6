@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib;
 using System.IO;
+using Tyuiu.GalimovAA.Sprint6.Task6.V14.Lib;
 
 namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
 {
@@ -12,14 +12,14 @@ namespace Tyuiu.GalimovAA.Sprint6.Task6.V14.Test
         {
             string path = @"C:\Test\InPutFileTask6V14.txt";
 
-            string testData = "Hello world\nThis is test\nzebra amazing\nquick brown fox\nlazy dog";
-            File.WriteAllText(path, testData);
+            File.WriteAllText(path, "hello world\nzebra amazing\ntest zoo\nfinal");
 
             DataService ds = new DataService();
-            string result = ds.CollectTextFromFile("z", path);
+            string result = ds.CollectTextFromFile(path);
 
-            string wait = "zebra lazy";
-            Assert.AreEqual(wait, result);
+            Assert.AreEqual("zebra amazing zoo", result);
+
+            File.Delete(path);
         }
     }
 }

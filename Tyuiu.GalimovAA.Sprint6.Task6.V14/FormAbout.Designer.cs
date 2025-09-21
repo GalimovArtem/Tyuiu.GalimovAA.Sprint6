@@ -15,54 +15,35 @@
 
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAbout));
-            pictureBoxAvatar_GAA = new PictureBox();
-            labelInfo_GAA = new Label();
-            buttonOk_GAA = new Button();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar_GAA).BeginInit();
-            SuspendLayout();
-            // 
-            // pictureBoxAvatar_GAA
-            // 
-            pictureBoxAvatar_GAA.Location = new Point(2, 12);
-            pictureBoxAvatar_GAA.Name = "pictureBoxAvatar_GAA";
-            pictureBoxAvatar_GAA.Size = new Size(124, 150);
-            pictureBoxAvatar_GAA.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBoxAvatar_GAA.TabIndex = 0;
-            pictureBoxAvatar_GAA.TabStop = false;
-            // 
+            this.labelInfo_GAA = new System.Windows.Forms.Label();
+            this.buttonOk_GAA = new System.Windows.Forms.Button();
+            this.SuspendLayout();
+
             // labelInfo_GAA
-            // 
-            labelInfo_GAA.Location = new Point(135, 12);
-            labelInfo_GAA.Name = "labelInfo_GAA";
-            labelInfo_GAA.Size = new Size(282, 135);
-            labelInfo_GAA.TabIndex = 3;
-            labelInfo_GAA.Text = resources.GetString("labelInfo_GAA.Text");
-            labelInfo_GAA.Click += labelInfo_GAA_Click;
-            // 
+            this.labelInfo_GAA.AutoSize = true;
+            this.labelInfo_GAA.Location = new System.Drawing.Point(12, 20);
+            this.labelInfo_GAA.Name = "labelInfo_GAA";
+            this.labelInfo_GAA.Size = new System.Drawing.Size(260, 65);
+            this.labelInfo_GAA.Text = "Разработчик: Галимов А. А.\r\nгруппа ПКТб-24-1\r\n\r\nПрограмма разработана в рамках изучения C#\r\nТюменский индустриальный университет (c) 2024";
+
             // buttonOk_GAA
-            // 
-            buttonOk_GAA.Location = new Point(329, 150);
-            buttonOk_GAA.Name = "buttonOk_GAA";
-            buttonOk_GAA.Size = new Size(75, 23);
-            buttonOk_GAA.TabIndex = 2;
-            buttonOk_GAA.Text = "ОК";
-            buttonOk_GAA.Click += buttonOk_GAA_Click;
-            // 
+            this.buttonOk_GAA.Location = new System.Drawing.Point(100, 100);
+            this.buttonOk_GAA.Name = "buttonOk_GAA";
+            this.buttonOk_GAA.Size = new System.Drawing.Size(75, 25);
+            this.buttonOk_GAA.TabIndex = 1;
+            this.buttonOk_GAA.Text = "Ок";
+            this.buttonOk_GAA.Click += new System.EventHandler(this.buttonOk_GAA_Click);
+
             // FormAbout
-            // 
-            ClientSize = new Size(429, 185);
-            Controls.Add(buttonOk_GAA);
-            Controls.Add(labelInfo_GAA);
-            Controls.Add(pictureBoxAvatar_GAA);
-            Name = "FormAbout";
-            Text = "О программе";
-            Load += FormAbout_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAvatar_GAA).EndInit();
-            ResumeLayout(false);
+            this.ClientSize = new System.Drawing.Size(284, 141);
+            this.Controls.Add(this.buttonOk_GAA);
+            this.Controls.Add(this.labelInfo_GAA);
+            this.Name = "FormAbout";
+            this.Text = "О программе";
+            this.ResumeLayout(false);
+            this.PerformLayout();
         }
 
-        private System.Windows.Forms.PictureBox pictureBoxAvatar_GAA;
         private System.Windows.Forms.Label labelInfo_GAA;
         private System.Windows.Forms.Button buttonOk_GAA;
     }
